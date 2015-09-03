@@ -1,12 +1,12 @@
 var tape = require('tape');
-var core = require('./core/core');
-var filename = require('./util/filename');
+var core = require('givenjs-core');
 
 var givenTape = Object.create(tape);
 var setupFunction = function() {};
 
 givenTape.test = function test(name, cb) {
-    var fileName = filename(test);
+    core.initTest(test);
+
     tape.test(name, callback);
 
     function callback(t) {

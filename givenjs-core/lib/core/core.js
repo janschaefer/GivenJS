@@ -2,6 +2,7 @@
 
 var log = require('../util/log');
 var config = require('../util/config');
+var filename = require('./util/filename');
 var Model = require('../model/model');
 var renderModelAsString = require('../report/consolereport');
 var analyseModel = require('./paramanalyser');
@@ -11,6 +12,7 @@ var Scenario = require('./scenario');
  * Maps filenames to Models
  */
 var models = {};
+var currentTestFile = null;
 var currentModel = null;
 var currentScenario = null;
 var currentTags = [];
@@ -30,8 +32,12 @@ function tag( tags ) {
     currentTags = currentTags.concat( tags );
 }
 
-function startScenario( fileName, name ) {
-    var scenarioModel = getModel(fileName).getScenarioModel( name );
+function initTest( testFn ) {
+    currentTestFile = filename(test);
+}
+
+function startScenario( name ) {
+    var scenarioModel = getModel(currentTestFile).getScenarioModel( name );
     scenarioModel.addTags( currentTags );
     currentScenario = new Scenario( scenarioModel );
     log("Starting scenario " + name);

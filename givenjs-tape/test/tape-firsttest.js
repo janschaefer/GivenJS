@@ -1,4 +1,4 @@
-var t = require('../../lib/given-tape.js')
+var t = require('../index.js')
 var stages = require('../stages/stages');
 
 t.setup( function (s, world) {

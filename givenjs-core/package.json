@@ -1,18 +1,18 @@
 {
-  "name": "givenjs",
+  "name": "givenjs-core",
   "version": "0.0.1",
   "description": "Behavior-Driven Development in plain Javascript",
-  "main": "lib/given.js",
+  "main": "index.js",
   "directories": {
     "test": "test"
   },
   "devDependencies": {
-    "tap": "^1.3.2",
+    "tap-spec": "^4.1.0",
     "tape": "^4.2.0",
     "where.js": "0.0.14"
   },
   "scripts": {
-    "test": "tap test/tap/*.js && tape test/tape/*.js"
+    "test": "tape test/*.js | tap-spec"
   },
   "keywords": [
     "bdd",
