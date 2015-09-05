@@ -1,3 +1,5 @@
+'use strict';
+
 var t = require('../index.js')
 var GivenCustomer = require('./stages/givencustomer');
 var WhenOrder = require('./stages/whenorder');

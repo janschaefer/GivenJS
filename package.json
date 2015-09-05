@@ -1,0 +1,26 @@
+{
+  "name": "given-parent",
+  "version": "0.0.0",
+  "description": "Behavior-Driven Development in plain Javascript",
+  "main": "index.js",
+  "directories": {
+  },
+  "devDependencies": {
+  },
+  "scripts": {
+    "test": "tap given-tap/test/*.js && tape given-tape/test/*.js",
+    "lint": "jshint -c .jshintrc **/*.js",
+    "dep": "madge -x '(node_modules)' **/*.js",
+    "circulardep": "npm run dep -- -c",
+    "pretest": "npm run lint && npm run circulardep"
+  },
+  "keywords": [
+    "bdd",
+    "testing",
+    "tests"
+  ],
+  "author": "Jan Schäfer",
+  "license": "MIT",
+  "dependencies": {
+  }
+}

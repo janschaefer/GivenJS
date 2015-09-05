@@ -1,3 +1,5 @@
+'use strict';
+
 var t = require('../index.js');
 
 var GivenCustomer = require('./stages/givencustomer');

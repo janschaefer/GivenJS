@@ -16,12 +16,16 @@ var Scenario = require('./scenario');
  * Maps file names to Models
  */
 var models = {};
+var fileTags = [];
 var currentModel = null;
-var currentScenario = null;
-var currentTags = [];
+var currentTestState = null;
 
 module.exports.tag = function tag(tags) {
-  currentTags = currentTags.concat(tags);
+  if (!currentTestState) {
+    fileTags = fileTags.concat(tags);
+  } else {
+    currentTestState.scenarioModel.addTags(tags);
+  }
 };
 
 /**
@@ -31,7 +35,9 @@ module.exports.tag = function tag(tags) {
  * @returns {string} the file name
  */
 module.exports.getFileName = function getFileName(testFn) {
-  return filename(testFn);
+  var fileName = filename(testFn);
+  console.assert(fileName, "Could not determine file name");
+  return fileName;
 };
 
 /**
@@ -40,28 +46,42 @@ module.exports.getFileName = function getFileName(testFn) {
  * @param {string} name the name of the scenario
  */
 module.exports.startScenario = function startScenario(fileName, name) {
-  var scenarioModel = getModel(fileName).getScenarioModel(name);
-  scenarioModel.addTags(currentTags);
-  currentScenario = new Scenario(scenarioModel);
+  currentTestState = {};
+  currentTestState.scenarioModel = getModel(fileName).getScenarioModel(name);
+  currentTestState.scenarioModel.addTags(fileTags);
+  var scenario = new Scenario(currentTestState.scenarioModel);
   log("Starting scenario " + name + " in test file '" + fileName + "'");
-  return currentScenario;
-};
+  return scenario;
+}
+;
 
 module.exports.finished = function finished() {
-  if (currentModel) {
-    currentModel.addMissingTags();
-    analyseModel(currentModel);
-    log.info(renderModelAsString(currentModel));
-    currentModel.write(getConfig().reportDir);
-    currentTags = [];
+  var model = currentModel;
+  if (model) {
+    model.addMissingTags();
+    analyseModel(model);
+    log.info(renderModelAsString(model));
+    model.write(getConfig().reportDir);
+    fileTags = [];
   }
+};
+
+module.exports.createGlobals = function createGlobals() {
+  global.given = function given() {
+    return currentTestState.testObject.given();
+  };
+  global.when = function when() {
+    return currentTestState.testObject.when();
+  };
+  global.then = function then() {
+    return currentTestState.testObject.then();
+  };
 };
 
 function getModel(name) {
   var model = models[name];
   if (model) return model;
 
-  log("Creating new model for file " + name);
   model = Model.newModel(name);
   currentModel = model;
   models[name] = model;
@@ -105,6 +125,8 @@ module.exports.prepareTestObject = function prepareTestObject(scenario, t) {
       });
     }
   };
+
+  currentTestState.testObject = s;
 
   return s;
 };

@@ -1,0 +1,130 @@
+{
+  "className": "firsttest",
+  "scenarios": [
+    {
+      "className": "firsttest",
+      "testMethodName": "givenjs can be used to write Given-When-Then scenarios using tape",
+      "description": "givenjs can be used to write Given-When-Then scenarios using tape",
+      "tagIds": [
+        "JS"
+      ],
+      "pending": false,
+      "explicitParameters": [],
+      "derivedParameters": [],
+      "casesAsTable": false,
+      "scenarioCases": [
+        {
+          "caseNr": 1,
+          "steps": [
+            {
+              "value": "a_customer",
+              "words": [
+                {
+                  "value": "given",
+                  "isIntroWord": true
+                },
+                {
+                  "value": "a customer"
+                }
+              ],
+              "status": "PASSED",
+              "durationInNanos": 0
+            },
+            {
+              "value": "a_book",
+              "words": [
+                {
+                  "value": "and",
+                  "isIntroWord": true
+                },
+                {
+                  "value": "a book"
+                }
+              ],
+              "status": "PASSED",
+              "durationInNanos": 0
+            },
+            {
+              "value": "the_customer_orders_a_book",
+              "words": [
+                {
+                  "value": "when",
+                  "isIntroWord": true
+                },
+                {
+                  "value": "the customer orders a book"
+                }
+              ],
+              "status": "PASSED",
+              "durationInNanos": 1000000
+            },
+            {
+              "value": "an_email_is_sent_to_the_customer",
+              "words": [
+                {
+                  "value": "then",
+                  "isIntroWord": true
+                },
+                {
+                  "value": "an email is sent to the customer"
+                }
+              ],
+              "status": "PASSED",
+              "durationInNanos": 1000000
+            },
+            {
+              "value": "something_additional_happens",
+              "words": [
+                {
+                  "value": "then",
+                  "isIntroWord": true
+                },
+                {
+                  "value": "something additional happens"
+                }
+              ],
+              "status": "PASSED",
+              "durationInNanos": 0
+            }
+          ],
+          "success": true,
+          "errorMessage": null,
+          "durationInNanos": 82324429
+        }
+      ],
+      "durationInNanos": 2000000,
+      "executionStatus": "SUCCESS"
+    },
+    {
+      "className": "firsttest",
+      "testMethodName": "This is another test",
+      "description": "This is another test",
+      "tagIds": [
+        "JS"
+      ],
+      "pending": false,
+      "explicitParameters": [],
+      "derivedParameters": [],
+      "casesAsTable": false,
+      "scenarioCases": [
+        {
+          "caseNr": 1,
+          "steps": [],
+          "success": true,
+          "errorMessage": null,
+          "durationInNanos": 82324429
+        }
+      ],
+      "durationInNanos": 0,
+      "executionStatus": "SUCCESS"
+    }
+  ],
+  "tagMap": {
+    "JS": {
+      "type": "JS",
+      "description": "",
+      "prependType": true,
+      "color": "blue"
+    }
+  }
+}
