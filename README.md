@@ -31,8 +31,14 @@ t.test('givenjs can be used with node-tap', function(_) {
 
 ## Supported test frameworks
 
-* node-tap
-* tape
+* node-tap (`given-tap`)
+* tape (`given-tape`)
+
+### Missing test frameworks
+
+* jasmine
+* mocha
+* ...
 
 ## Parameterized Scenarios
 

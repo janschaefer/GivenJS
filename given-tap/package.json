@@ -1,0 +1,30 @@
+{
+  "name": "given-tap",
+  "version": "0.0.0",
+  "description": "GivenJS for tap",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "devDependencies": {
+    "tap": "^1.3.2",
+    "where.js": "0.0.14"
+  },
+  "scripts": {
+    "test": "tap test/*.js"
+  },
+  "keywords": [
+    "bdd",
+    "testing",
+    "tests",
+    "givenjs"
+  ],
+  "author": "Jan Schäfer",
+  "license": "MIT",
+  "dependencies": {
+    "given-core": "0.0.0",
+    "ascii-table": "0.0.8",
+    "extend": "^3.0.0",
+    "lodash": "^3.10.1"
+  }
+}

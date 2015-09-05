@@ -1,0 +1,37 @@
+{
+  "name": "given-core",
+  "version": "0.0.0",
+  "description": "Behavior-Driven Development in plain Javascript",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "devDependencies": {
+    "jsdoc": "^3.3.2",
+    "jshint": "^2.8.0",
+    "madge": "^0.5.0",
+    "tap-spec": "^4.1.0",
+    "tape": "^4.2.0",
+    "where.js": "0.0.14"
+  },
+  "scripts": {
+    "test": "tape test/*.js | tap-spec",
+    "doc": "jsdoc -d build/jsdoc lib/**/*.js",
+    "lint": "jshint -c ../.jshintrc lib/**/*.js",
+    "dep": "madge -x '(node_modules)' lib/**/*.js",
+    "circulardep": "npm run dep -- -c",
+    "pretest": "npm run lint && npm run circulardep"
+  },
+  "keywords": [
+    "bdd",
+    "testing",
+    "tests"
+  ],
+  "author": "Jan Schäfer",
+  "license": "MIT",
+  "dependencies": {
+    "ascii-table": "0.0.8",
+    "extend": "^3.0.0",
+    "lodash": "^3.10.1"
+  }
+}
