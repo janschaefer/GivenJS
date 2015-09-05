@@ -40,3 +40,10 @@ givenTap.tag = function tag() {
 tap.tearDown(function () {
   core.finished();
 });
+
+/**
+ * Provide global functions given(), when() and then()
+ */
+givenTap.enableGlobals = function () {
+  core.createGlobals();
+};

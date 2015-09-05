@@ -1,9 +1,14 @@
 'use strict';
 
+/**
+ * @module given-tape
+ */
+
 var tape = require('tape');
 var core = require('given-core');
 
-var givenTape = Object.create(tape);
+var givenTape = module.exports = Object.create(tape);
+
 var setupFunction = function () {
 };
 
@@ -36,4 +41,10 @@ givenTape.setup = function (fn) {
   setupFunction = fn;
 };
 
-module.exports = givenTape;
+/**
+ * Provide global functions given(), when() and then()
+ */
+givenTape.enableGlobals = function () {
+  core.createGlobals();
+};
+

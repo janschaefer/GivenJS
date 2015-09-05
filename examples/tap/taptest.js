@@ -49,3 +49,15 @@ where(function () {
     _.when().the_customer_orders_a_book();
   });
 }, {t: t});
+
+
+t.enableGlobals();
+t.test("Globals can be enabled", function () {
+
+  given().a_customer()
+    .and().a_book();
+
+  when().the_customer_orders_a_book();
+  then().an_email_is_sent_to_the_customer();
+
+});

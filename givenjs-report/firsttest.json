@@ -56,7 +56,7 @@
                 }
               ],
               "status": "PASSED",
-              "durationInNanos": 1000000
+              "durationInNanos": 2000000
             },
             {
               "value": "an_email_is_sent_to_the_customer",
@@ -92,7 +92,7 @@
           "durationInNanos": 82324429
         }
       ],
-      "durationInNanos": 2000000,
+      "durationInNanos": 4000000,
       "executionStatus": "SUCCESS"
     },
     {

@@ -67,13 +67,13 @@ module.exports.finished = function finished() {
 };
 
 module.exports.createGlobals = function createGlobals() {
-  global.given = function given() {
+  GLOBAL.given = function given() {
     return currentTestState.testObject.given();
   };
-  global.when = function when() {
+  GLOBAL.when = function when() {
     return currentTestState.testObject.when();
   };
-  global.then = function then() {
+  GLOBAL.then = function then() {
     return currentTestState.testObject.then();
   };
 };
