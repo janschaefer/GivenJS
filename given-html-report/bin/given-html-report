@@ -2,7 +2,7 @@
 
 'use strict';
 
-var fs = require('fs');
+var fs = require('fs-extra');
 
 var program = require('commander');
 var path = require('path');
@@ -13,7 +13,7 @@ var sourceDir;
 
 program
 	.version(version)
-	.usage('[options] <files>')
+	.usage('[options] <jsonFiles>')
 	.option('-t, --targetDir <targetDir>', 'the target directory to generate the HTML report to','givenjs-html-report')
 	.parse(process.argv);
 
@@ -27,6 +27,17 @@ var targetDir = program.targetDir;
 console.log("Target Directory: "+targetDir);
 
 var jsonInputs = [];
+
+console.log("Creating "+targetDir);
+fs.mkdirpSync(targetDir);
+
+console.log("Copy static data to "+targetDir);
+
+glob(__dirname+"/../app", function( err, files ) {
+	files.forEach( function (file) {
+		fs.copySync(file, targetDir);
+	});
+});
 
 program.args.forEach( function( arg ) {
 	glob(arg, function (err, files) {
