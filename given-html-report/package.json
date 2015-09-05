@@ -1,0 +1,30 @@
+{
+  "name": "given-html-report",
+  "version": "0.0.0",
+  "description": "HTML Report generator for GivenJS",
+  "main": "index.js",
+  "bin": {
+    "given-html-report": "./bin/given-html-report"
+  },
+  "directories": {
+    "test": "test"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "mvn": "mkdir -p resources && cd resources && wget http://central.maven.org/maven2/com/tngtech/jgiven/jgiven-html5-report/0.8.0/jgiven-html5-report-0.8.0.jar"
+  },
+  "keywords": [
+    "bdd",
+    "testing",
+    "tests",
+    "GivenJS",
+    "HTML",
+    "report"
+  ],
+  "author": "Jan Schäfer",
+  "license": "MIT",
+  "dependencies": {
+    "commander": "^2.8.1",
+    "glob": "^5.0.14"
+  }
+}

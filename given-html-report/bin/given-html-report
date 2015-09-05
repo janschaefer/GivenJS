@@ -1,0 +1,40 @@
+#!/usr/bin/env node
+
+'use strict';
+
+var fs = require('fs');
+
+var program = require('commander');
+var path = require('path');
+var glob = require('glob');
+var	version = require('../package.json').version;
+
+var sourceDir;
+
+program
+	.version(version)
+	.usage('[options] <files>')
+	.option('-t, --targetDir <targetDir>', 'the target directory to generate the HTML report to','givenjs-html-report')
+	.parse(process.argv);
+
+if (program.args.length === 0) {
+	console.log(program.helpInformation());
+	process.exit(1);
+}
+
+var targetDir = program.targetDir;
+
+console.log("Target Directory: "+targetDir);
+
+var jsonInputs = [];
+
+program.args.forEach( function( arg ) {
+	glob(arg, function (err, files) {
+		files.forEach(function (file) {
+			console.log("Reading "+file);
+			jsonInputs.push(JSON.parse(fs.readFileSync(file, "utf8")));
+		});
+	});
+});
+
+
