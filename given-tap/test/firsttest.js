@@ -1,18 +1,23 @@
-var t = require('../index.js')
-var stages = require('./stages/stages');
+var t = require('../index.js');
+
+var GivenCustomer = require('./stages/givencustomer');
+var WhenOrder = require('./stages/whenorder');
+var ThenEmail = require('./stages/thenemail');
+var ExtraStage = require('./stages/extrastage');
+
 require('where.js');
 
 t.tag('foobar', 'shoebar');
 
 t.setup(function (s, world) {
-  s.givenStage(new stages.GivenCustomer(world));
-  s.whenStage(new stages.WhenOrder(world));
-  s.thenStage(new stages.ThenEmail(s, world));
+  s.givenStage(new GivenCustomer(world));
+  s.whenStage(new WhenOrder(world));
+  s.thenStage(new ThenEmail(s, world));
 });
 
 
 t.test('givenjs can be used to write Given-When-Then scenarios using node-tap', function (_, world) {
-  var extraStage = _.stage(new stages.ExtraStage(world));
+  var extraStage = _.stage(new ExtraStage(world));
 
   _.given().a_customer()
     .and().a_book();

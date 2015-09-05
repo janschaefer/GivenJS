@@ -8,13 +8,15 @@ GivenJS is currently in a prototype status and not available via NPM. It will al
 ## Example
 
 ```
-var t = require('../../lib/given-tap.js'); // this will become its own npm package
-var stages = require('../stages/stages');
+var t = require('given-tap');
+var GivenCustomer = require('./stages/givencustomer');
+var WhenOrder = require('./stages/whenorder');
+var ThenEmail = require('./stages/thenemail');
 
-t.setup( function (s, world) {
-    s.givenStage( new stages.GivenCustomer(world) );
-    s.whenStage( new stages.WhenOrder(world) );
-    s.thenStage( new stages.ThenEmail(s, world) );
+t.setup( function (t, world) {
+    t.givenStage( new GivenCustomer(world) );
+    t.whenStage( new WhenOrder(world) );
+    t.thenStage( new ThenEmail(t, world) );
 });
 
 t.test('givenjs can be used with node-tap', function(_) {
