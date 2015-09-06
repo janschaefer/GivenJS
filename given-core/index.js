@@ -1,1 +1,1 @@
-module.exports = require('./lib/core/core.js');
+module.exports = require('./lib/core/core.js')

@@ -2,37 +2,37 @@
  * @module util/config
  */
 
-'use strict';
+'use strict'
 
-var fs = require("fs");
-var log = require("./log");
-var extend = require("extend");
+var fs = require('fs')
+var log = require('./log')
+var extend = require('extend')
 
 var defaults = {
-  "reportDir": "givenjs-report",
-  "logLevel": "INFO"
-};
+  'reportDir': 'givenjs-report',
+  'logLevel': 'INFO'
+}
 
-var config = null;
+var config = null
 
-var CONFIG_FILE = "givenjs.json";
+var CONFIG_FILE = 'givenjs.json'
 
-function readConfig() {
-  config = Object.create(defaults);
+function readConfig () {
+  config = Object.create(defaults)
 
-  var fileConfig;
+  var fileConfig
   try {
-    fileConfig = JSON.parse(fs.readFileSync(CONFIG_FILE, "utf8"));
+    fileConfig = JSON.parse(fs.readFileSync(CONFIG_FILE, 'utf8'))
   } catch (e) {
-    log.warn("Could not open config file '" + CONFIG_FILE + "'. " + e);
+    log.warn('Could not open config file "' + CONFIG_FILE + '". ' + e)
   }
 
   if (fileConfig) {
-    extend(config, fileConfig);
-    log.setLogLevel(config.logLevel);
-    log.debug("Opened config file: " + JSON.stringify(fileConfig));
+    extend(config, fileConfig)
+    log.setLogLevel(config.logLevel)
+    log.debug('Opened config file: ' + JSON.stringify(fileConfig))
   } else {
-    log.setLogLevel(config.logLevel);
+    log.setLogLevel(config.logLevel)
   }
 }
 
@@ -40,9 +40,9 @@ function readConfig() {
  * Gets the config
  * @returns {*}
  */
-module.exports = function getConfig() {
+module.exports = function getConfig () {
   if (config === null) {
-    readConfig();
+    readConfig()
   }
-  return config;
-};
+  return config
+}

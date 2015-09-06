@@ -1,29 +1,32 @@
-'use strict';
+'use strict'
 
-var path = require('path');
-var log = require('./log');
+var path = require('path')
+var log = require('./log')
 
-function getFileName() {
-  var oldPrepareStackTrace = Error.prepareStackTrace;
+function getFileName () {
+  var oldPrepareStackTrace = Error.prepareStackTrace
 
   Error.prepareStackTrace = function (error, structuredStackTrace) {
-    return structuredStackTrace;
-  };
-
-  var err = new Error();
-  var stack = err.stack;
-  var result;
-  for (var i = 0; i < stack.length; i++) {
-    var absoluteName = stack[i].getFileName();
-    log.debug("absoluteName " + absoluteName);
-    var name = path.basename(absoluteName, path.extname(absoluteName));
-    if (name === 'module') {
-      break;
+    if (error) {
+      log.error(error)
     }
-    result = name;
+    return structuredStackTrace
   }
-  Error.prepareStackTrace = oldPrepareStackTrace;
-  return result;
+
+  var err = new Error()
+  var stack = err.stack
+  var result
+  for (var i = 0; i < stack.length; i++) {
+    var absoluteName = stack[i].getFileName()
+    log.debug('absoluteName ' + absoluteName)
+    var name = path.basename(absoluteName, path.extname(absoluteName))
+    if (name === 'module') {
+      break
+    }
+    result = name
+  }
+  Error.prepareStackTrace = oldPrepareStackTrace
+  return result
 }
 
-module.exports = getFileName;
+module.exports = getFileName
