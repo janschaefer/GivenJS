@@ -12,8 +12,7 @@
     "test": "tap given-tap/test/*.js && tape given-tape/test/*.js",
     "standard": "standard",
     "dep": "madge -x '(node_modules)' given-tap/index.js given-tape/index.js given-core/lib",
-    "circulardep": "npm run dep -- -c",
-    "pretest": "npm run standard && npm run circulardep"
+    "circulardep": "npm run dep -- -c"
   },
   "keywords": [
     "bdd",

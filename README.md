@@ -73,6 +73,25 @@ where(function(){
 }, { t:t })
 ```
 
+This will result in the following report:
+
+```
+ Scenario: Scenarios can be parameterized
+
+   Given a customer
+     And <nBooks> books with name <bookName>
+    When the customer orders a book
+    Then the book will be shipped
+
+  Cases:
+  .---------------------------------.
+  | # | nBooks | bookName | Status  |
+  |---|--------|----------|---------|
+  | 1 | 1      | One      | Success |
+  | 2 | 4      | Two      | Success |
+  | 3 | 6      | Three    | Success |
+  '---------------------------------'
+```
 
 ## Configuration
 

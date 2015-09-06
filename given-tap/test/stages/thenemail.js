@@ -6,5 +6,9 @@ module.exports = function ThenEmail (t, world) {
     t.equal(world.book.name, 'Great Name')
     t.equal(world.orderId, 1234, 'orderId is wrong')
   }
+
+  this.the_book_will_be_shipped = function () {
+
+  }
 }
 

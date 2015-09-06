@@ -50,5 +50,6 @@ where(function () {
     _.given().a_customer()
       .and().$_books_with_name(nbooks, name)
     _.when().the_customer_orders_a_book()
+    _.then().the_book_will_be_shipped()
   })
 }, {t: t})
