@@ -45,7 +45,7 @@ where(function () {
    4      | Two
    6      | Three
    ***/
-  test('Scenarios can be parameterized', function (_) {
+  t.test('Scenarios can be parameterized', function (_) {
     _.given().a_customer()
       .and().$_books_with_name(nbooks, name)
     _.when().the_customer_orders_a_book()

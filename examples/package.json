@@ -7,18 +7,20 @@
     "test": "test"
   },
   "devDependencies": {
-    "given-html-report": "^0.0.2-2",
     "tape": "^4.2.0",
     "tap": "^1.3.2",
-    "given-tap": "0.0.2-0",
-    "given-tape": "0.0.2-0",
+    "given-html-report": "^0.0.2-2",
+    "given-tap": "0.0.2-1",
+    "given-tape": "0.0.2-1",
     "where.js": "0.0.14",
     "tap-spec": "^4.1.0",
     "standard": "^5.2.1"
   },
   "scripts": {
     "standard": "standard",
-    "test": "tape test/tape/*.js | tap-spec",
+    "test-tap": "tap test/tap/*.js | tap-spec",
+    "test-tape": "tape test/tape/*.js | tap-spec",
+    "test": "npm run test-tap && npm run test-tape",
     "givenjs-report": "rm -rf givenjs-html-report && given-html-report givenjs-reports/*.json -t givenjs-html-report",
     "pregivenjs-report": "npm test"
   },
