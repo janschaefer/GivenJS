@@ -22,6 +22,10 @@
     "pretest": "npm run standard && npm run circulardep",
     "standard": "standard"
   },
+  "repository": {
+      "type" : "git",
+      "url" : "https://github.com/janschaefer/GivenJS"
+  },
   "keywords": [
     "bdd",
     "testing",
