@@ -56,24 +56,34 @@ function generateDataFiles (inputArgs, targetDir) {
   var metaDataJsonp = 'jgivenReport.setMetaData(' + JSON.stringify(metaData) + ');'
   fs.writeFileSync(dataDir + '/metaData.js', metaDataJsonp);
 
-  generateTagFile(dataDir)
+  generateTagFile(jsonInputs, dataDir)
 }
 
-function generateTagFile (dataDir) {
+function generateTagFile (jsonInputs, dataDir) {
+
   var tagFile = {
-    tagTypeMap: {
-      JS: {
-        name: 'JS'
-      }
-    },
-    tags: {
-      JS: {
-        tagType: 'JS'
+    tagTypeMap: {},
+    tags: {}
+  }
+
+
+  jsonInputs.forEach(function (testSuite) {
+    var tagId, tag
+    for (tagId in testSuite.tagMap) {
+      if (testSuite.tagMap.hasOwnProperty(tagId)) {
+        tag = testSuite.tagMap[tagId]
+        tagFile.tagTypeMap[tag.type] = tag
+        tagFile.tags[tagId] = {
+          tagType: tag.type,
+          value: tag.value,
+          description: tag.description
+        }
       }
     }
-  }
+  });
+
   var jsonpString = 'jgivenReport.setTags(' + JSON.stringify(tagFile) + ');'
-  fs.writeFileSync(dataDir + '/tags.js', jsonpString);
+  fs.writeFileSync(dataDir + '/tags.js', jsonpString)
 }
 
 function readInputFiles (inputArgs) {
