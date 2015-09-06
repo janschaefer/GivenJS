@@ -3,31 +3,32 @@ Developer-friendly behavior-driven development for Javascript.
 
 This is actually an implementation of [JGiven](http://jgiven.org) in Javascript. The JSON files produced by GivenJS are identical to those of JGiven. This allows you to use JGiven and GivenJS in the same project and create a combined report.
 
-GivenJS is currently in a prototype status and not available via NPM. It will also change a lot and should not be used in a real project, yet.
+GivenJS is currently in a prototype status. It will also change a lot and should not be used in a real project, yet.
 
 ## Example
 
 ```
-var t = require('given-tap');
-var GivenCustomer = require('./stages/givencustomer');
-var WhenOrder = require('./stages/whenorder');
-var ThenEmail = require('./stages/thenemail');
+var tap = require('tap')
+var t = require('given-tap')(tap)
+var GivenCustomer = require('./stages/givencustomer')
+var WhenOrder = require('./stages/whenorder')
+var ThenEmail = require('./stages/thenemail')
 
 t.setup( function (t, world) {
-    t.givenStage( new GivenCustomer(world) );
-    t.whenStage( new WhenOrder(world) );
-    t.thenStage( new ThenEmail(t, world) );
-});
+    t.givenStage( new GivenCustomer(world) )
+    t.whenStage( new WhenOrder(world) )
+    t.thenStage( new ThenEmail(t, world) )
+})
 
 t.test('givenjs can be used with node-tap', function(_) {
 
     _.given().a_customer()
-        .and().a_book();
+        .and().a_book()
 
-    _.when().the_customer_orders_a_book();
-    _.then().an_email_is_sent_to_the_customer();
+    _.when().the_customer_orders_a_book()
+    _.then().an_email_is_sent_to_the_customer()
 
-});
+})
 
 ```
 
@@ -57,12 +58,12 @@ where(function(){
     t.test("Scenarios can be parameterized", function(_) {
 
         _.given().a_customer()
-            .and().$_books_with_name(nbooks, name);
-        _.when().the_customer_orders_book(name);
-        _.then().the_book_will_be_shipped();
+            .and().$_books_with_name(nbooks, name)
+        _.when().the_customer_orders_book(name)
+        _.then().the_book_will_be_shipped()
 
     });
-}, { t:t });
+}, { t:t })
 ```
 
 

@@ -1,4 +1,5 @@
-var t = require('given-tap');
+var tap = require('tap')
+var t = require('given-tap')(tap);
 
 var GivenCustomer = require('./stages/givencustomer');
 var WhenOrder = require('./stages/whenorder');

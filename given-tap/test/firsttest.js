@@ -2,7 +2,8 @@
 
 'use strict'
 
-var t = require('../index.js')
+var tap = require('tap')
+var t = require('../index.js')(tap)
 
 var GivenCustomer = require('./stages/givencustomer')
 var WhenOrder = require('./stages/whenorder')

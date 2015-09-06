@@ -28,8 +28,9 @@
   "bugs": "https://github.com/janschaefer/GivenJS/issues",
   "repository": {
     "type": "git",
-    "url": "https://github.com/janschaefer/GivenJS"
+    "url": "git@github.com:janschaefer/GivenJS.git"
   },
+  "homepage": "https://github.com/janschaefer/GivenJS",
   "keywords": [
     "bdd",
     "testing",

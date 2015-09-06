@@ -1,7 +1,10 @@
 /*eslint spaced-comment:0 no-undef:0 */
 'use strict'
 
-var t = require('../index.js')
+var tape = require('tape')
+var t = require('../')(tape)
+var test = t.test
+
 var GivenCustomer = require('./stages/givencustomer')
 var WhenOrder = require('./stages/whenorder')
 var ThenEmail = require('./stages/thenemail')
@@ -13,7 +16,7 @@ t.setup(function (s, world) {
   s.thenStage(new ThenEmail(s, world))
 })
 
-t.test('givenjs can be used to write Given-When-Then scenarios using tape',
+test('givenjs can be used to write Given-When-Then scenarios using tape',
   function (_, world) {
     var extraStage = _.stage(new ExtraStage(world))
 
@@ -27,7 +30,7 @@ t.test('givenjs can be used to write Given-When-Then scenarios using tape',
       .then().something_additional_happens()
   })
 
-t.test('This is another test', function (s) {
+test('This is another test', function (s) {
 
 })
 

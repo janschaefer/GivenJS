@@ -17,7 +17,8 @@
   "scripts": {
     "standard": "standard",
     "test": "tape test/*.js",
-    "pretest": "npm run standard"
+    "pretest": "npm run standard",
+    "prepublish": "npm test"
   },
   "keywords": [
     "bdd",
@@ -28,9 +29,9 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/janschaefer/GivenJS"
+    "url": "git@github.com:janschaefer/GivenJS.git"
   },
-  "bugs": "https://github.com/janschaefer/GivenJS/issues",
+  "homepage": "https://github.com/janschaefer/GivenJS",
   "author": "Jan Schäfer",
   "license": "MIT",
   "dependencies": {
@@ -38,5 +39,8 @@
     "ascii-table": "0.0.8",
     "extend": "^3.0.0",
     "lodash": "^3.10.1"
+  },
+  "peerDependencies": {
+    "tape": "^4.2.0"
   }
 }

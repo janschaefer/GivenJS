@@ -39,8 +39,9 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/janschaefer/GivenJS"
+    "url": "git@github.com:janschaefer/GivenJS.git"
   },
+  "homepage": "https://github.com/janschaefer/GivenJS",
   "author": "Jan Schäfer",
   "license": "MIT",
   "dependencies": {

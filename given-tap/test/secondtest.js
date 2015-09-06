@@ -1,7 +1,8 @@
 'use strict'
 
-var tap = require('../index.js')
+var tap = require('tap')
+var t = require('../index.js')(tap)
 
-tap.test('This is a second test', function () {
+t.test('This is a second test', function () {
 
 })
