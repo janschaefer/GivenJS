@@ -20,6 +20,7 @@
     "tests",
     "givenjs"
   ],
+  "bugs": "https://github.com/janschaefer/GivenJS/issues",
   "author": "Jan Schäfer",
   "license": "MIT",
   "dependencies": {

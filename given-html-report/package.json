@@ -26,6 +26,7 @@
     "standard": "standard index.js",
     "preinstall": "npm run appunzip && npm run standard"
   },
+  "bugs": "https://github.com/janschaefer/GivenJS/issues",
   "keywords": [
     "bdd",
     "testing",

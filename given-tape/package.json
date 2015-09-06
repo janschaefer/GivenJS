@@ -27,6 +27,7 @@
     "type": "git",
     "url": "https://github.com/janschaefer/GivenJS"
   },
+  "bugs": "https://github.com/janschaefer/GivenJS/issues",
   "author": "Jan Schäfer",
   "license": "MIT",
   "dependencies": {
