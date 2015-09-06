@@ -1,13 +1,14 @@
 {
   "name": "given-tape",
-  "version": "0.0.2-1",
+  "version": "0.0.2-2",
   "description": "GivenJS for tape",
   "main": "index.js",
   "directories": {
     "test": "test"
   },
   "files": [
-    "README.md"
+    "README.md",
+    "index.js"
   ],
   "devDependencies": {
     "tape": "^4.2.0",

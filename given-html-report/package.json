@@ -1,6 +1,6 @@
 {
   "name": "given-html-report",
-  "version": "0.0.2-1",
+  "version": "0.0.2-3",
   "description": "HTML Report generator for GivenJS",
   "main": "index.js",
   "bin": {
@@ -25,7 +25,7 @@
     "preappunzip": "npm run unzip",
     "appunzip": "rm -rf app && mkdir -p app && unzip tmp/com/tngtech/jgiven/report/html5/app.zip -d app",
     "standard": "standard index.js",
-    "preinstall": "npm run appunzip && npm run standard"
+    "prepublish": "npm run appunzip && npm run standard"
   },
   "bugs": "https://github.com/janschaefer/GivenJS/issues",
   "keywords": [
