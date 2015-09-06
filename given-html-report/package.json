@@ -6,6 +6,11 @@
   "bin": {
     "given-html-report": "./bin/given-html-report"
   },
+  "files": [
+    "app",
+    "bin",
+    "index.js"
+  ],
   "directories": {
     "test": "test"
   },
