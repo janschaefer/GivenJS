@@ -6,13 +6,14 @@
   "directories": {
   },
   "devDependencies": {
+    "standard": "^5.2.1"
   },
   "scripts": {
     "test": "tap given-tap/test/*.js && tape given-tape/test/*.js",
-    "lint": "jshint -c .jshintrc given-tap/index.js given-tape/index.js given-core/lib",
+    "standard": "standard",
     "dep": "madge -x '(node_modules)' given-tap/index.js given-tape/index.js given-core/lib",
     "circulardep": "npm run dep -- -c",
-    "pretest": "npm run lint && npm run circulardep"
+    "pretest": "npm run standard && npm run circulardep"
   },
   "keywords": [
     "bdd",

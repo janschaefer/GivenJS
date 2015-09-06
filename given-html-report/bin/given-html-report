@@ -2,12 +2,10 @@
 
 'use strict';
 
-var fs = require('fs-extra');
-
 var program = require('commander');
-var path = require('path');
-var glob = require('glob');
 var	version = require('../package.json').version;
+
+var generateReport = require('../index');
 
 var sourceDir;
 
@@ -24,28 +22,7 @@ if (program.args.length === 0) {
 
 var targetDir = program.targetDir;
 
-console.log("Target Directory: "+targetDir);
+generateReport( program.args, targetDir );
 
-var jsonInputs = [];
-
-console.log("Creating "+targetDir);
-fs.mkdirpSync(targetDir);
-
-console.log("Copy static data to "+targetDir);
-
-glob(__dirname+"/../app", function( err, files ) {
-	files.forEach( function (file) {
-		fs.copySync(file, targetDir);
-	});
-});
-
-program.args.forEach( function( arg ) {
-	glob(arg, function (err, files) {
-		files.forEach(function (file) {
-			console.log("Reading "+file);
-			jsonInputs.push(JSON.parse(fs.readFileSync(file, "utf8")));
-		});
-	});
-});
 
 

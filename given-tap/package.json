@@ -8,10 +8,13 @@
   },
   "devDependencies": {
     "tap": "^1.3.2",
-    "where.js": "0.0.14"
+    "where.js": "0.0.14",
+    "standard": "^5.2.1"
   },
   "scripts": {
-    "test": "tap test/*.js"
+    "standard": "standard",
+    "test": "tap test/*.js",
+    "pretest": "npm run standard"
   },
   "keywords": [
     "bdd",
