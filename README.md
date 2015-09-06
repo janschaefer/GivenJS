@@ -8,18 +8,25 @@ GivenJS is currently in a prototype status. It will also change a lot and should
 ## Example
 
 ```
+// require tap or tape
 var tap = require('tap')
+
+// enable GivenJS features by applying to the tap object
 var t = require('given-tap')(tap)
+
+// import stage implementations
 var GivenCustomer = require('./stages/givencustomer')
 var WhenOrder = require('./stages/whenorder')
 var ThenEmail = require('./stages/thenemail')
 
+// setup stages
 t.setup( function (t, world) {
     t.givenStage( new GivenCustomer(world) )
     t.whenStage( new WhenOrder(world) )
     t.thenStage( new ThenEmail(t, world) )
 })
 
+// write a scenario
 t.test('givenjs can be used with node-tap', function(_) {
 
     _.given().a_customer()
@@ -34,7 +41,7 @@ t.test('givenjs can be used with node-tap', function(_) {
 
 ## Supported test frameworks
 
-* node-tap (`given-tap`)
+* tap (`given-tap`)
 * tape (`given-tape`)
 
 ### Missing test frameworks
