@@ -4,46 +4,46 @@
  * @module given-tap
  */
 
-'use strict';
+'use strict'
 
-var tap = require('tap');
-var core = require('given-core');
-var givenTap;
+var tap = require('tap')
+var core = require('given-core')
+var givenTap
 
-module.exports = givenTap = Object.create(tap);
+module.exports = givenTap = Object.create(tap)
 
 var setupFunction = function () {
-};
+}
 
-givenTap.test = function test(name, cb) {
-  tap.test(name, callback);
+givenTap.test = function test (name, cb) {
+  tap.test(name, callback)
 
-  var fileName = core.getFileName(test);
+  var fileName = core.getFileName(test)
 
-  function callback(t) {
-    var scenario = core.startScenario(fileName, name);
-    var enhanced = core.prepareTestObject(scenario, t);
-    setupFunction(enhanced, scenario.world);
-    cb(enhanced, scenario.world);
-    enhanced.finished();
+  function callback (t) {
+    var scenario = core.startScenario(fileName, name)
+    var enhanced = core.prepareTestObject(scenario, t)
+    setupFunction(enhanced, scenario.world)
+    cb(enhanced, scenario.world)
+    enhanced.finished()
   }
-};
+}
 
 givenTap.setup = function (fn) {
-  setupFunction = fn;
-};
+  setupFunction = fn
+}
 
-givenTap.tag = function tag() {
-  core.tag(Array.prototype.slice.call(arguments, 0));
-};
+givenTap.tag = function tag () {
+  core.tag(Array.prototype.slice.call(arguments, 0))
+}
 
 tap.tearDown(function () {
-  core.finished();
-});
+  core.finished()
+})
 
 /**
  * Provide global functions given(), when() and then()
  */
 givenTap.enableGlobals = function () {
-  core.createGlobals();
-};
+  core.createGlobals()
+}
