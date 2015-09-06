@@ -85,6 +85,7 @@ GivenJS can be configured by providing a file named `givenjs.json` with the foll
 * Pending steps
 * Tags (partially)
 * Measure time
+* Attachments
 * ...
 
 ## Differences to JGiven

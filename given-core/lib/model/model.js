@@ -160,7 +160,7 @@ ScenarioModel.prototype.addTags = function addTags (tags) {
  * @constructor
  */
 function SuiteModel (name) {
-  this.className = name
+  this.className = 'js.' + name
   this.scenarios = []
   this.tagMap = {}
   this.tagMap.JS = new TagModel('JS')
