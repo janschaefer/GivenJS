@@ -103,6 +103,21 @@ GivenJS can be configured by providing a file named `givenjs.json` with the foll
 }
 ```
 
+## Generate HTML Report
+
+GivenJS generates a JSON report file for each test file. You can generate an HTML report from these JSON files by using the `given-html-report` as follows:
+
+
+```
+npm install -g given-html-report
+```
+
+```
+given-html-report givenjs-report/*.json -t givenjs-html-report
+```
+
+The resulting report is identical to the one from [JGiven](http://jgiven.org/jgiven-report/html5/) (it uses the same sources).
+
 
 ## Missing Features compared to JGiven
 
