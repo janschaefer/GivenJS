@@ -35,6 +35,10 @@
     "report",
     "JGiven"
   ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/janschaefer/GivenJS"
+  },
   "author": "Jan Schäfer",
   "license": "MIT",
   "dependencies": {
