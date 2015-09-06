@@ -1,11 +1,14 @@
 {
   "name": "given-tap",
-  "version": "0.0.1",
+  "version": "0.0.2-0",
   "description": "GivenJS for tap",
   "main": "index.js",
   "directories": {
     "test": "test"
   },
+  "files": [
+    "README.md"
+  ],
   "devDependencies": {
     "tap": "^1.3.2",
     "where.js": "0.0.14",
