@@ -1,0 +1,11 @@
+#!/bin/sh
+
+PROJECTS="given-core given-tap given-tape given-html-report"
+
+for project in $PROJECTS; do
+    echo $project
+    cd $project
+#    npm publish .
+    npm version prerelease
+    cd -
+done
