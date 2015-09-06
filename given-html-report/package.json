@@ -1,6 +1,6 @@
 {
   "name": "given-html-report",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "HTML Report generator for GivenJS",
   "main": "index.js",
   "bin": {

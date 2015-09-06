@@ -1,6 +1,6 @@
 {
   "name": "given-tape",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "GivenJS for tape",
   "main": "index.js",
   "directories": {
@@ -31,7 +31,7 @@
   "author": "Jan Schäfer",
   "license": "MIT",
   "dependencies": {
-    "given-core": "^0.0.0",
+    "given-core": "^0.0.1",
     "ascii-table": "0.0.8",
     "extend": "^3.0.0",
     "lodash": "^3.10.1"
