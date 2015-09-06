@@ -10,7 +10,9 @@
   },
   "scripts": {
     "standard": "standard",
-    "test": "tap tap/*.js | tap-spec"
+    "test": "tap tap/*.js | tap-spec",
+    "givenjs-report": "rm -rf givenjs-html-report && given-html-report givenjs-reports/*.json -t givenjs-html-report",
+    "pregivenjs-report": "npm test"
   },
   "keywords": [
     "bdd",
