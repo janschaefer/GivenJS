@@ -24,7 +24,7 @@
     "preappunzip": "npm run unzip",
     "appunzip": "rm -rf app && mkdir -p app && unzip tmp/com/tngtech/jgiven/report/html5/app.zip -d app",
     "standard": "standard index.js",
-    "preinstall": "npm run appunzip"
+    "preinstall": "npm run appunzip && npm run standard"
   },
   "keywords": [
     "bdd",
