@@ -21,6 +21,7 @@
     "test-tap": "tap test/tap/*.js | tap-spec",
     "test-tape": "tape test/tape/*.js | tap-spec",
     "test": "npm run test-tap && npm run test-tape",
+    "pretest": "rm -rf givenjs-reports",
     "givenjs-report": "rm -rf givenjs-html-report && given-html-report givenjs-reports/*.json -t givenjs-html-report",
     "pregivenjs-report": "npm test"
   },

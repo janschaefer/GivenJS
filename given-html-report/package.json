@@ -19,9 +19,9 @@
     "standard": "^5.2.1"
   },
   "scripts": {
-    "mvn": "rm -rf tmp && mkdir -p tmp && cd tmp && wget http://central.maven.org/maven2/com/tngtech/jgiven/jgiven-html5-report/0.8.0/jgiven-html5-report-0.8.0.jar",
+    "mvn": "rm -rf tmp && mkdir -p tmp && cd tmp && wget http://central.maven.org/maven2/com/tngtech/jgiven/jgiven-html5-report/0.8.1/jgiven-html5-report-0.8.1.jar",
     "preunzip": "npm run mvn",
-    "unzip": "cd tmp && unzip jgiven-html5-report-0.8.0.jar com/tngtech/jgiven/report/html5/app.zip",
+    "unzip": "cd tmp && unzip jgiven-html5-report-0.8.1.jar com/tngtech/jgiven/report/html5/app.zip",
     "preappunzip": "npm run unzip",
     "appunzip": "rm -rf app && mkdir -p app && unzip tmp/com/tngtech/jgiven/report/html5/app.zip -d app",
     "standard": "standard index.js",

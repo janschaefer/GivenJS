@@ -1,3 +1,5 @@
+/*eslint handle-callback-err: 0*/
+
 'use strict'
 
 var path = require('path')
@@ -7,9 +9,6 @@ function getFileName () {
   var oldPrepareStackTrace = Error.prepareStackTrace
 
   Error.prepareStackTrace = function (error, structuredStackTrace) {
-    if (error) {
-      log.error(error)
-    }
     return structuredStackTrace
   }
 

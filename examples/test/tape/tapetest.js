@@ -9,7 +9,7 @@ var ExtraStage = require('../stages/extrastage')
 
 require('where.js')
 
-t.tag('foobar', 'shoebar')
+t.tag('tape')
 
 t.setup(function (s, world) {
   s.givenStage(new GivenCustomer(world))
