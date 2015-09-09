@@ -63,3 +63,5 @@ test('Globals can be enabled', function () {
   then().an_email_is_sent_to_the_customer()
 
 })
+
+t.finished()
