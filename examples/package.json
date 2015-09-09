@@ -9,9 +9,9 @@
   "devDependencies": {
     "tape": "^4.2.0",
     "tap": "^1.3.2",
-    "given-html-report": "^0.0.2-2",
-    "given-tap": "0.0.2-1",
-    "given-tape": "0.0.2-1",
+    "given-html-report": "^0.0.2-3",
+    "given-tap": "0.0.2-2",
+    "given-tape": "0.0.2-2",
     "where.js": "0.0.14",
     "tap-spec": "^4.1.0",
     "standard": "^5.2.1"
