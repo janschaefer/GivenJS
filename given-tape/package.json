@@ -1,6 +1,6 @@
 {
   "name": "given-tape",
-  "version": "0.0.2-2",
+  "version": "0.0.2-3",
   "description": "GivenJS for tape",
   "main": "index.js",
   "directories": {

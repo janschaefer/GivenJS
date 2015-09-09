@@ -1,6 +1,6 @@
 {
   "name": "given-tap",
-  "version": "0.0.2-2",
+  "version": "0.0.2-3",
   "description": "GivenJS for tap",
   "main": "index.js",
   "directories": {
